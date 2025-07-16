@@ -1,0 +1,212 @@
+/* styles.css */
+/* ------ Tipografía base ------ */
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #f9f9f9;
+  color: #222;
+  margin: 0;
+  line-height: 1.6;
+}
+body {
+  overflow-x: hidden;
+}
+
+
+/* ------ Contenedor principal ------ */
+.contenedor {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* ------ Encabezado ------ */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 2.6em;
+  margin: 0 0 10px 0;
+}
+
+.bajada {
+  color: #444;
+  font-size: 1.2em;
+  margin-bottom: 16px;
+}
+
+header img, .visual img {
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(60,60,60,0.08);
+  margin-top: 18px;
+}
+
+/* ------ Secciones Scrollytelling ------ */
+.scrolly-section {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.scrolly-section h2 {
+  color: #193163;
+  margin-top: 0;
+}
+
+.scrolly-section p {
+  margin: 16px 0 0 0;
+}
+
+.visual {
+  margin: 32px 0;
+  text-align: center;
+}
+
+.visual iframe {
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+  min-height: 340px;
+  box-shadow: 0 4px 20px rgba(60,60,60,0.07);
+}
+
+/* ------ Frases y bloquequote ------ */
+blockquote {
+  font-style: italic;
+  color: #555;
+  background: #f2f6fa;
+  border-left: 5px solid #4169E1;
+  padding: 14px 20px;
+  margin: 24px 0 0 0;
+  border-radius: 10px;
+}
+
+/* ------ Créditos/Pie de página ------ */
+.creditos {
+  font-size: 0.95em;
+  color: #666;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  padding-top: 16px;
+  background: #f4f7fb;
+  border-radius: 0 0 10px 10px;
+}
+.fullscreen-cover {
+  width: 100vw;
+  height: 100vh;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.fullscreen-overlay {
+  background: rgba(255,255,255,0.75); /* Blanco semitransparente, podés ajustar la opacidad */
+  border-radius: 18px;
+  padding: 48px 36px;
+  text-align: center;
+  max-width: 650px;
+  margin: auto;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+}
+.fullscreen-cover h1 {
+  font-size: 2.6em;
+  margin-bottom: 12px;
+  color: #18264e;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+}
+.fullscreen-subtitle {
+  color: #2c3142;
+  font-size: 1.2em;
+  margin-bottom: 6px;
+}
+@media (max-width: 600px) {
+  .fullscreen-overlay {
+    padding: 22px 8px;
+    max-width: 97vw;
+  }
+  .fullscreen-cover h1 { font-size: 1.6em; }
+}
+body { margin: 0; }
+
+.arrow-down {
+  margin: 32px auto 0 auto;
+  width: 36px;
+  height: 36px;
+  border-left: 5px solid #183d70;
+  border-bottom: 5px solid #183d70;
+  transform: rotate(-45deg);
+  animation: bounceDown 1.3s infinite;
+}
+@keyframes bounceDown {
+  0%,100% { transform: translateY(0) rotate(-45deg);}
+  50% { transform: translateY(15px) rotate(-45deg);}
+}
+
+.introduccion {
+  margin-top: 300px;  /* Ajustá este valor a tu gusto (ej: 160px, 200px, etc.) */
+}
+
+/* ------ Responsive ------ */
+@media (max-width: 900px) {
+  .contenedor {
+    max-width: 98vw;
+    padding: 10px;
+  }
+  .scrolly-section {
+    padding: 20px 5px;
+  }
+  h1 { font-size: 2em; }
+}
+
+/* ------ Efecto aparición (animación sencilla por scroll, si agregás clase .visible con JS) ------ */
+.scrolly-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+
+.scrolly-section {
+  margin-top: 300px;   /* Espacio antes de cada bloque */
+  margin-bottom: 160px; /* Espacio después de cada bloque, ajustá a gusto */
+}
+
+.scrolly-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ------ Detalles ------ */
+strong {
+  color: #183d70;
+}
+em {
+  color: #284c77;
+}
+
+/* Scrollbar personalizado con imagen de burro para Chrome, Edge y Opera */
+::-webkit-scrollbar {
+  width: 36px;      /* Ancho de la barra de scroll */
+  background: #ececec;  /* Color de fondo de la barra */
+}
+
+::-webkit-scrollbar-thumb {
+  background: url('burro-scroll.png') center center no-repeat;
+  background-size: 28px 28px;
+  border-radius: 16px;
+  min-height: 48px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  filter: brightness(1.15) drop-shadow(0 0 3px #ad842d);
+}
