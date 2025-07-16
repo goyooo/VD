@@ -1,0 +1,2597 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Martín: El Cruce de los Andes - Narrativa Cinematográfica</title>
+    <style>
+        :root {
+            /* Paleta de colores profesional para el tema */
+            --primary-dark: #2C1810;      /* Marrón oscuro - textos principales */
+            --primary-medium: #5D4037;     /* Marrón medio - elementos secundarios */
+            --primary-light: #8D6E63;      /* Marrón claro - elementos suaves */
+            
+            --accent-gold: #D4AF37;        /* Oro - acentos importantes */
+            --accent-bronze: #CD7F32;      /* Bronce - elementos destacados */
+            
+            --neutral-dark: #37474F;       /* Gris azulado oscuro */
+            --neutral-medium: #607D8B;     /* Gris azulado medio */
+            --neutral-light: #B0BEC5;      /* Gris azulado claro */
+            
+            --background-cream: #FFF8E1;   /* Crema - fondos principales */
+            --background-light: #FFFDE7;   /* Crema muy claro */
+            --background-white: #FFFFFF;   /* Blanco puro */
+            
+            --mountain-blue: #455A64;      /* Azul montaña */
+            --sky-blue: #78909C;          /* Azul cielo */
+            
+            /* Tipografía */
+            --font-primary: 'Playfair Display', 'Georgia', serif;
+            --font-secondary: 'Source Sans Pro', 'Segoe UI', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            overflow-x: hidden;
+            /* Fondo general para transiciones suaves entre secciones claras */
+            background: linear-gradient(to bottom, 
+                var(--background-white) 0%, 
+                var(--background-cream) 20%, 
+                var(--background-light) 40%, 
+                var(--background-cream) 60%, 
+                var(--background-white) 80%, 
+                var(--background-cream) 100%);
+            color: var(--primary-dark);
+            line-height: 1.6;
+        }
+
+        .arrow-down {
+            margin: 32px auto 0 auto;
+            width: 36px;
+            height: 36px;
+            border-left: 5px solid white;
+            border-bottom: 5px solid white;
+            transform: rotate(-45deg);
+            animation: bounceDown 1.3s infinite;
+        }
+
+        @keyframes bounceDown {
+            0%,100% { transform: translateY(0) rotate(-45deg);}
+            50% { transform: translateY(15px) rotate(-45deg);}
+        }
+
+        /* Hero Section - Elegante y profesional */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('san-martin-portada.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(44, 24, 16, 0.1) 100%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-primary);
+            font-size: 6rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease-out;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: -2px;
+        }
+
+        .hero h2 {
+            font-family: var(--font-primary);
+            font-size: 2.5rem;
+            color: white;
+            transition: all 0.3s ease-out;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        /* Rebelión en la Cumbre - Diseño limpio */
+        .rebelion-cumbre {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            /* Degradado suave de blanco a crema para la transición */
+            background: linear-gradient(to bottom, 
+                var(--background-white) 0%, 
+                var(--background-cream) 100%
+            );
+            padding: 6rem 2rem;
+        }
+
+        .rebelion-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .rebelion-text {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .rebelion-text.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .rebelion-text h2 {
+            font-family: var(--font-primary);
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .rebelion-text p {
+            font-size: 1.2rem;
+            color: var(--primary-medium);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .rebelion-image {
+            height: 370px;
+            background: linear-gradient(135deg, var(--neutral-light), var(--neutral-medium));
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease-out;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .rebelion-image.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .image-placeholder {
+            text-align: center;
+            color: var(--background-white);
+        }
+
+        .image-placeholder .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Plan Maestro Section - Nuevo diseño con degradado */
+        .plan-maestro {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* Degradado suave de crema a marrón oscuro */
+            background: linear-gradient(to bottom, 
+                var(--background-cream) 0%, 
+                var(--primary-dark) 100%
+            );
+            padding: 6rem 2rem;
+            text-align: center; /* Centrar el texto */
+            color: var(--background-cream); /* Color de texto para el fondo oscuro */
+            position: relative;
+            z-index: 15; /* Asegurar que esté por encima del fondo general del body */
+        }
+
+        .plan-text {
+            max-width: 900px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .plan-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .plan-text h2 {
+            font-family: var(--font-primary);
+            font-size: 3.8rem;
+            font-weight: 700;
+            color: var(--accent-gold); /* Color de acento para el título */
+            margin-bottom: 2.5rem;
+            line-height: 1.2;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7); /* Sombra para legibilidad */
+        }
+
+        .plan-text p {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: var(--background-cream); /* Color de texto para el fondo oscuro */
+            margin-bottom: 2rem;
+            font-weight: 400;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Sombra para legibilidad */
+        }
+
+
+        /* Video containers - Simplified for normal playback */
+        .video-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-dark); /* Fondo sólido para contraste con videos */
+            padding: 4rem;
+            position: relative;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Flourish Scrollytelling - Diseño profesional y elegante */
+        .flourish-scrolly-section {
+            /* Degradado suave desde el color oscuro del video, aclarando hacia el final */
+            background: linear-gradient(to bottom, 
+                var(--primary-dark) 0%, 
+                var(--neutral-dark) 30%, 
+                var(--neutral-medium) 70%, 
+                var(--primary-dark) 100% /* Termina en oscuro para la transición a Soldados */
+            );
+            position: relative;
+        }
+
+        .flourish-scrolly-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 600vh;
+        }
+
+        .flourish-graphic {
+            position: sticky;
+            top: 10vh;
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .flourish-embed-container {
+            width: 90%;
+            max-width: 900px;
+            height: 70vh;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(212, 175, 55, 0.2);
+            border: 2px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .flourish-viz {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            pointer-events: none;
+        }
+
+        .flourish-viz.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .flourish-viz iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 1.5rem;
+        }
+
+        .flourish-steps {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .flourish-step {
+            position: absolute;
+            width: 100%;
+            height: 150vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: all 1.2s ease-out;
+            pointer-events: none;
+        }
+
+        .flourish-step:nth-child(1) { top: 0vh; }
+        .flourish-step:nth-child(2) { top: 150vh; }
+        .flourish-step:nth-child(3) { top: 300vh; }
+        .flourish-step:nth-child(4) { top: 450vh; }
+
+        .flourish-step.active {
+            opacity: 1;
+        }
+
+        .flourish-step-content {
+            background: linear-gradient(135deg, 
+                rgba(44, 24, 16, 0.95) 0%, 
+                rgba(93, 64, 55, 0.90) 100%);
+            backdrop-filter: blur(20px);
+            border-radius: 2rem;
+            padding: 3.5rem;
+            max-width: 650px;
+            text-align: center;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(212, 175, 55, 0.3);
+            transform: translateY(50px);
+            transition: all 1s ease-out;
+        }
+
+        .flourish-step.active .flourish-step-content {
+            transform: translateY(0);
+        }
+
+        .flourish-step h3 {
+            font-family: var(--font-primary);
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: var(--accent-gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 600;
+        }
+
+        .flourish-step p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--background-cream);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-weight: 400;
+        }
+
+        /* Soldados Scrollytelling - Nuevo diseño */
+        .soldados-scrolly-section {
+            min-height: 300vh; /* Ajustar según la cantidad de texto y el efecto deseado */
+            /* Transición de fondo suave desde la sección anterior */
+            background: linear-gradient(to bottom, 
+                var(--primary-dark) 0%, /* Transición desde el color oscuro del video */
+                var(--background-cream) 10%, 
+                var(--background-white) 50%,
+                var(--background-cream) 90%,
+                var(--primary-dark) 100% /* Transición hacia el color oscuro del siguiente video */
+            );
+            padding: 6rem 2rem;
+            position: relative;
+            z-index: 20;
+        }
+
+        .soldados-scrolly-wrapper {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .soldados-sticky-image-container {
+            position: sticky;
+            top: 10vh; /* Ajusta la posición sticky */
+            width: 34%; /* Ancho de la columna de la imagen */
+            height: 80vh; /* Altura de la imagen fija */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            background-color: var(--neutral-light); /* Placeholder background */
+        }
+
+        .soldado-current-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsión */
+            transition: opacity 0.8s ease-in-out; /* Transición para el cambio de imagen */
+            opacity: 1;
+        }
+
+        .soldados-scroll-text-container {
+            width: 55%; /* Ancho de la columna de texto */
+            padding-left: 4rem; /* Espacio entre imagen y texto */
+        }
+
+        .soldado-text-block {
+            min-height: 100vh; /* Cada bloque de texto ocupa al menos la altura de la ventana para el scroll */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem 0;
+            opacity: 0.3; /* Menos opaco cuando no está activo */
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .soldado-text-block.active {
+            opacity: 1; /* Más opaco cuando está activo */
+        }
+
+        .soldado-text-block h3 {
+            font-family: var(--font-primary);
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 2.5rem;
+        }
+
+        .soldado-text-block h3::before {
+            content: "🟫"; /* Icono decorativo */
+            position: absolute;
+            left: 0;
+            top: 0.2rem;
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+        }
+
+        .soldado-text-block p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--primary-medium);
+            /* Eliminado el fondo, padding, border-radius y box-shadow para que el texto esté "suelto" */
+            margin-bottom: 1.5rem; 
+        }
+
+        /* Andes Scrollytelling - Efecto de capas acumulativas */
+        .andes-scrolly-section {
+            position: relative;
+            min-height: 750vh; /* 6 imágenes * 150vh cada una */
+            /* Transición de fondo suave desde la sección anterior */
+            background: linear-gradient(to bottom, var(--primary-dark) 0%, var(--background-white) 100%);
+        }
+
+        .andes-scrolly-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 750vh;
+        }
+
+        .andes-background-layers {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .andes-background-image {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 3500px;
+            height: 70vh;
+            object-fit: contain;
+            border-radius: 1rem;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .andes-background-image.visible {
+            opacity: 1;
+        }
+
+        /* Z-index progresivo para que cada imagen aparezca encima de la anterior */
+        .andes-background-image:nth-child(1) { z-index: 1; }
+        .andes-background-image:nth-child(2) { z-index: 2; }
+        .andes-background-image:nth-child(3) { z-index: 3; }
+        .andes-background-image:nth-child(4) { z-index: 4; }
+        .andes-background-image:nth-child(5) { z-index: 5; }
+
+        .andes-steps {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .andes-step {
+            position: absolute;
+            width: 100%;
+            height: 150vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: all 1.2s ease-out;
+            pointer-events: none;
+        }
+
+        .andes-step:nth-child(1) { top: 0vh; }
+        .andes-step:nth-child(2) { top: 150vh; }
+        .andes-step:nth-child(3) { top: 300vh; }
+        .andes-step:nth-child(4) { top: 450vh; }
+        .andes-step:nth-child(5) { top: 600vh; }
+
+        .andes-step.active {
+            opacity: 1;
+        }
+
+        .andes-step-content {
+            background: linear-gradient(135deg, 
+                rgba(44, 24, 16, 0.95) 0%, 
+                rgba(93, 64, 55, 0.90) 100%);
+            backdrop-filter: blur(20px);
+            border-radius: 2rem;
+            padding: 3.5rem;
+            max-width: 650px;
+            text-align: center;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(212, 175, 55, 0.3);
+            transform: translateY(50px);
+            transition: all 1s ease-out;
+        }
+
+        .andes-step.active .andes-step-content {
+            transform: translateY(0);
+        }
+
+        .andes-step h3 {
+            font-family: var(--font-primary);
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: var(--accent-gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 600;
+        }
+
+        .andes-step p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--background-cream);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-weight: 400;
+        }
+
+        /* Preparativos Scrollytelling - Nueva sección (reemplaza Cordillera Dibujos) */
+        .preparativos-scrolly-section {
+            position: relative;
+            min-height: 600vh; /* 4 pasos * 150vh cada uno */
+            background: linear-gradient(to bottom, 
+                var(--background-white) 0%, 
+                var(--background-cream) 100%
+            );
+            padding: 6rem 2rem;
+        }
+
+        .preparativos-scrolly-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 600vh;
+        }
+
+        .preparativos-background-layers {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .preparativos-background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .preparativos-background-image.visible {
+            opacity: 1;
+        }
+
+        /* Imágenes reales para cada paso de preparativos */
+        .preparativos-background-image:nth-child(1) { background-image: url('preparativos-viveres.jpg'); }
+        .preparativos-background-image:nth-child(2) { background-image: url('preparativos-armamento.jpg'); }
+        .preparativos-background-image:nth-child(3) { background-image: url('preparativos-vestimenta.jpg'); }
+        .preparativos-background-image:nth-child(4) { background-image: url('preparativos-inteligencia.jpg'); }
+
+        .preparativos-steps {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .preparativos-step {
+            position: absolute;
+            width: 100%;
+            height: 150vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: all 1.2s ease-out;
+            pointer-events: none;
+        }
+
+        .preparativos-step:nth-child(1) { top: 0vh; }
+        .preparativos-step:nth-child(2) { top: 150vh; }
+        .preparativos-step:nth-child(3) { top: 300vh; }
+        .preparativos-step:nth-child(4) { top: 450vh; }
+
+        .preparativos-step.active {
+            opacity: 1;
+        }
+
+        .preparativos-step-content {
+            background: linear-gradient(135deg, 
+                rgba(93, 64, 55, 0.95) 0%, 
+                rgba(44, 24, 16, 0.90) 100%);
+            backdrop-filter: blur(20px);
+            border-radius: 2rem;
+            padding: 3.5rem;
+            max-width: 650px;
+            text-align: center;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(212, 175, 55, 0.3);
+            transform: translateY(50px);
+            transition: all 1s ease-out;
+            color: var(--background-cream);
+        }
+
+        .preparativos-step.active .preparativos-step-content {
+            transform: translateY(0);
+        }
+
+        .preparativos-step h3 {
+            font-family: var(--font-primary);
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: var(--accent-gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 600;
+        }
+
+        .preparativos-step p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--background-cream);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-weight: 400;
+        }
+
+        /* Logística y Previsión - Nueva sección (reemplaza Info de los Andes) */
+        .logistica-info {
+            min-height: 100vh;
+            background: linear-gradient(to bottom, 
+                var(--background-cream) 0%, 
+                var(--background-cream) 100%
+            );
+            padding: 6rem 2rem;
+            position: relative;
+            z-index: 20;
+        }
+
+        .logistica-info h2 {
+            font-family: var(--font-primary);
+            font-size: 3.5rem;
+            font-weight: 600;
+            text-align: center;
+            color: var(--primary-dark);
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .logistica-info h2.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .logistica-stats {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .logistica-stat-card {
+            background-color: var(--background-white);
+            padding: 3rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+            border: 2px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .logistica-stat-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .logistica-stat-number {
+            font-family: var(--font-primary);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--accent-bronze);
+            margin-bottom: 1rem;
+        }
+
+        .logistica-stat-label {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .logistica-stat-desc {
+            color: var(--primary-medium);
+            font-size: 1.1rem;
+        }
+
+        /* Inicio Leyenda - Elegante */
+        .inicio-leyenda {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Se basa en el fondo del body, o un degradado muy sutil */
+            background: transparent;
+            position: relative;
+            z-index: 20;
+        }
+
+        .inicio-content {
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 1.5s ease-out;
+        }
+
+        .inicio-content.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .fecha-grande {
+            font-family: var(--font-primary);
+            font-size: 6rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .inicio-content h2 {
+            font-family: var(--font-primary);
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        /* Los Pasos Scrollytelling - Nueva sección */
+        .pasos-scrolly-section {
+            position: relative;
+            min-height: 1500vh; /* Aumentado a 6 pasos * 250vh */
+            background: linear-gradient(to bottom, 
+                var(--background-cream) 0%, 
+                var(--neutral-medium) 100%
+            );
+            padding-bottom: 5vh; /* Espacio al final de la sección */
+        }
+
+        .pasos-scrolly-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 1500vh; /* Aumentado a 6 pasos * 250vh */
+        }
+
+        .pasos-title {
+            position: relative;
+            top: 0;
+            z-index: 100;
+            background: linear-gradient(to bottom, #fffceb 0%, #fdf6d6 100%);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .pasos-title h2 {
+            font-family: var(--font-primary);
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--primary-dark); /* Cambiado a primary-dark para mejor contraste */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .pasos-background-layers {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .paso-background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .paso-background-image.visible {
+            opacity: 1;
+        }
+
+        /* Imágenes reales para cada paso */
+        .paso-background-image:nth-child(1) {
+            background-image: url('comecaballos.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .paso-background-image:nth-child(2) {
+            background-image: url('guana.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .paso-background-image:nth-child(3) {
+            background-image: url('patos.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .paso-background-image:nth-child(4) {
+            background-image: url('uspallata.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .paso-background-image:nth-child(5) {
+            background-image: url('portillo.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .paso-background-image:nth-child(6) {
+            background-image: url('planchon.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .paso-placeholder-text {
+            font-family: var(--font-primary);
+            font-size: 4rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .pasos-steps {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .paso-step {
+            position: absolute;
+            width: 100%;
+            height: 250vh; /* Aumentado a 250vh */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: all 1.2s ease-out;
+            pointer-events: none;
+        }
+
+        /* Posiciones de cada paso, espaciados por 250vh */
+        .paso-step:nth-child(1) { top: 0vh; }
+        .paso-step:nth-child(2) { top: 250vh; }
+        .paso-step:nth-child(3) { top: 500vh; }
+        .paso-step:nth-child(4) { top: 750vh; }
+        .paso-step:nth-child(5) { top: 1000vh; }
+        .paso-step:nth-child(6) { top: 1250vh; }
+
+        .paso-step.active {
+            opacity: 1;
+        }
+
+        .paso-step-content {
+            background: linear-gradient(135deg, 
+                rgba(44, 24, 16, 0.95) 0%, 
+                rgba(93, 64, 55, 0.90) 100%);
+            backdrop-filter: blur(20px);
+            border-radius: 2rem;
+            padding: 3.5rem;
+            max-width: 650px;
+            text-align: center;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(212, 175, 55, 0.3);
+            transform: translateY(50px);
+            transition: all 1s ease-out;
+        }
+
+        .paso-step.active .paso-step-content {
+            transform: translateY(0);
+        }
+
+        .paso-step h3 {
+            font-family: var(--font-primary);
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: var(--accent-gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 600;
+        }
+
+        .paso-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .paso-detail-label {
+            font-size: 1.1rem;
+            color: var(--background-cream);
+            font-weight: 600;
+        }
+
+        .paso-detail-value {
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-align: right;
+        }
+
+        .paso-objetivo {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--background-cream);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-weight: 400;
+            font-style: italic;
+            margin-top: 1rem;
+            padding: 1.5rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 1rem;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .paso-image-container {
+            width: 100%;
+            height: 100%; /* Altura fija para la imagen */
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 1rem;
+            object-fit: cover;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.05); /* Fondo sutil para el contenedor */
+        }
+
+        .paso-info-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+            border-radius: 1rem;
+        }
+
+        /* Chacabuco Scrollytelling Section - New 3-screen battle section */
+        .chacabuco-scrolly-section {
+            position: relative;
+            min-height: 300vh; /* 3 screens * 100vh each */
+            /* Transición de fondo suave desde la sección anterior */
+            background: linear-gradient(to bottom, 
+                var(--neutral-medium) 0%, /* Desde el color gris medio de la sección Pasos */
+                rgba(0,0,0,0.8) 10%, /* Oscurece para las imágenes de fondo */
+                rgba(0,0,0,0.8) 90%,
+                var(--background-cream) 100% /* Hacia el color de la sección final */
+            );
+        }
+
+        .scroll-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        /* Screen 1: Gericault painting background */
+        .chacabuco-screen-1 {
+            background-image: url('batalla-de-chacabuco-gericault.jpg');
+        }
+
+        /* Screen 2: Vandorse painting background */
+        .chacabuco-screen-2 {
+            background-image: url('chacabuco-vandorse.jpeg');
+        }
+
+        /* Screen 3: Abrazo de Maipú background */
+        .chacabuco-screen-3 {
+            background-image: url('Abrazo_de_Maipu_Pedro_Subercaseaux.jpg');
+        }
+
+        /* Dark overlay for better text readability */
+        .scroll-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        /* Centered text container for screens 1 and 3 */
+        .scroll-text {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 3rem;
+            text-align: center;
+            background: rgba(44, 24, 16, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 2rem;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.5s ease-out;
+        }
+
+        .scroll-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-text h2 {
+            font-family: var(--font-primary);
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .scroll-text p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--background-cream);
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Split screen layout for screen 2 */
+        .split-screen {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .split-left {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem;
+            background: rgba(44, 24, 16, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .split-text {
+            max-width: 500px;
+            text-align: left;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 1.5s ease-out;
+        }
+
+        .split-text.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .split-text h3 {
+            font-family: var(--font-primary);
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .split-text p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: var(--background-cream);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .split-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            gap: 2rem;
+            background: rgba(93, 64, 55, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .embed-container {
+            width: 100%;
+            height: 45%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            border: 2px solid var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 1.5s ease-out;
+        }
+
+        .embed-container.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .flourish-embed-1,
+        .flourish-embed-2 {
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-family: var(--font-primary);
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        /* Nueva sección: El Rumbo Hacia la Gloria */
+        .plan-gloria {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, 
+                var(--background-cream) 0%, 
+                var(--background-cream) 100%); /* Fondo uniforme */
+            padding: 6rem 2rem;
+            text-align: center;
+            color: var(--primary-dark); /* Texto negro o marrón oscuro */
+            position: relative;
+            z-index: 15;
+        }
+
+        .plan-gloria .plan-text {
+            max-width: 900px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .plan-gloria .plan-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .plan-gloria .plan-text h2 {
+            font-family: var(--font-primary);
+            font-size: 3.8rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 2.5rem;
+            line-height: 1.2;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); /* más suave para fondo claro */
+        }
+
+        .plan-gloria .plan-text p {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: var(--primary-dark); /* texto oscuro sobre fondo claro */
+            margin-bottom: 2rem;
+            font-weight: 400;
+            text-shadow: none;
+        }
+
+        /* Estilo para textos "sueltos" (generalizado) */
+        .narrative-paragraph {
+            font-size: 1.25rem; /* Ligeramente más grande */
+            line-height: 1.8;
+            color: var(--primary-medium); /* Color consistente */
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            max-width: 900px; /* Ancho máximo para legibilidad */
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 1rem; /* Pequeño padding horizontal */
+            text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.05); /* Sombra muy sutil */
+        }
+
+        /* Responsive design for Chacabuco section */
+        @media (max-width: 768px) {
+            .scroll-text {
+                padding: 2rem;
+                margin: 1rem;
+            }
+
+            .scroll-text h2 {
+                font-size: 2rem;
+            }
+
+            .scroll-text p {
+                font-size: 1.1rem;
+            }
+
+            .split-screen {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+
+            .split-left {
+                padding: 2rem;
+            }
+
+            .split-text h3 {
+                font-size: 1.8rem;
+            }
+
+            .split-text p {
+                font-size: 1rem;
+            }
+
+            .split-right {
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .final-tribute h2 {
+                font-size: 3rem;
+            }
+
+            .final-tribute p {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Scrollbar personalizado con imagen de burro para Chrome, Edge y Opera */
+        ::-webkit-scrollbar {
+            width: 36px;      /* Ancho de la barra de scroll */
+            background: #ececec;  /* Color de fondo de la barra */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: url('burro-scroll.png') center center no-repeat;
+            background-size: 28px 28px;
+            border-radius: 16px;
+            min-height: 48px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            filter: brightness(1.15) drop-shadow(0 0 3px #ad842d);
+        }
+
+        /* Responsive - Mejorado */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .rebelion-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .rebelion-text h2 {
+                font-size: 2.5rem;
+            }
+
+            .fecha-grande {
+                font-size: 4rem;
+            }
+
+            .flourish-embed-container {
+                width: 95%;
+                height: 60vh;
+            }
+
+            .flourish-step-content {
+                padding: 2.5rem;
+                max-width: 90%;
+            }
+
+            .flourish-step h3 {
+                font-size: 2.2rem;
+            }
+
+            .flourish-step p {
+                font-size: 1.1rem;
+            }
+
+            .andes-step-content {
+                padding: 2.5rem;
+                max-width: 90%;
+            }
+
+            .andes-step h3 {
+                font-size: 2.2rem;
+            }
+
+            .andes-step p {
+                font-size: 1.1rem;
+            }
+
+            .paso-step-content {
+                padding: 2.5rem;
+                max-width: 90%;
+            }
+
+            .paso-step h3 {
+                font-size: 2.2rem;
+            }
+
+            .paso-placeholder-text {
+                font-size: 2.5rem;
+            }
+
+            .pasos-title h2 {
+                font-size: 2.5rem;
+            }
+
+            .soldados-scrolly-wrapper {
+                flex-direction: column;
+            }
+
+            .soldados-sticky-image-container {
+                position: relative; /* No sticky on mobile */
+                top: auto;
+                width: 100%;
+                height: 50vh; /* Adjust height for mobile */
+                margin-bottom: 2rem;
+            }
+
+            .soldados-scroll-text-container {
+                width: 100%;
+                padding-left: 0;
+            }
+
+            .soldado-text-block {
+                min-height: auto; /* No min-height on mobile */
+                padding: 1rem 0;
+            }
+        }
+        
+         .seccion-fija p{
+            line-height: 1.3;
+            font-size: 1.3rem;
+        }
+
+        .seccion-fija {
+            display: flex;
+            flex-direction: row;
+            height: auto;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #fef7e0, #fde68a);
+        }
+
+        .contenedor-imagen {
+            position: sticky;
+            top: 0;
+            flex: 1;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        .contenedor-imagen p {
+            margin-top: 25px;
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #3f3f3f;
+            font-family: 'Georgia', serif;
+        }
+
+        .contenedor-imagen img {
+            max-width: 100%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 1rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+         }
+
+        .contenedor-contenido {
+            flex: 1;
+            padding: 4rem 3rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .contenido-bloque {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #3f3f3f;
+            font-family: 'Georgia', serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- Audio para sonido de viento del primer video -->
+    <audio id="windSound" loop>
+        <source src="wind-sound.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Audio ambiental para el segundo video -->
+    <audio id="ambientWind">
+        <source src="viento.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Hero Section - Elegante -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 id="heroTitle">San Martín</h1>
+            <h2 id="heroSubtitle">El Cruce de los Andes</h2>
+            <div class="arrow-down"></div>
+        </div>
+    </section>
+
+    <section class="seccion-fija">
+        <div class="contenedor-imagen">
+            <img src="gral.jpeg" alt="Gran San Martin">
+            <p>"Ni mi salud valetudinaria ni sacrificio alguno es capaz de arredrarme"</p>
+        </div>
+        <div class="contenedor-contenido">
+            <div class="contenido-bloque bloque-con-imagen">
+                <h1>Un patriota que lo pospone todo a la gloria de consolidar la de su país</h1>
+                    <div> <p>Anhelando la libertad rioplatenese, el gobernador de Cuyo, el General Jose de San Martin, se predispone a organizar el cruce de los andes.
+                        Una vez declarada la independencia Argentina en el invierno del 1816, y con el apoyo del Gobierno, encabezado por Juan Martin de Pueyrredon, el General
+                        reune a sus hombres a los pies de la cordillera en Plumerillo, Mendoza. Desde allí opera y planifica con muchos recaudos.
+                    </p></div>
+                    <div class="video-container">
+                        <video id="v0" controls preload="auto">
+                            <source src="placeholder-video.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento video.
+                        </video>
+                    </div>
+                <div> <p>San Martin y Puerredon, el entonces Director Supremo, mantenían una estrecha relación epistolar que mediaba entre un jefe militar con hambre de 
+                    libertad y un jefe de estado que se endeudaba personalmente por cumplir con el sueño de libertad. Decía Pueyrredon:</p>
+                <p>"Van las 200 tiendas de campaña, y no hay más. Va el mundo, va el demonio, va la carne. Y yo no sé cómo me iría con las trampas en que quedo para 
+                    pagarlo todo, a bien que, en quebranto me voy yo también para que usted me dé algo del charqui que le mando, y ¡carajo! No me vuelva usted a pedir 
+                    más, si no quiere recibir la noticia de que he amanecido ahorcado en un tirante de la Fortaleza."
+                </p></div>
+                <img src="cartas.jpg" alt="Descripción" class="imagen-lateral">
+                
+                <p>Sus años como gobernador de Cuyo le enseñaron que los Andes estaban infestados de indigenas mapuches-pehuenches. </p>
+                <p>Nada se paseaba por la cordillera sin que los Tehuenches supieran. Por eso dos años antes del cruce, en el 1815 ya estaba reuniendose en parlamento con los caciques.
+                   Los beneficios de quienes mejor conocen los pasos y los asentamientos militares serían una de las estrategias óptimas para garantizar la libertad del continente. 
+                </p></div>
+                <img src="parlamento.jpg" alt="Descripción" class="imagen-lateral">
+            </div>
+        </div>  
+    </section>
+
+    <!-- Rebelión en la Cumbre -->
+    <section class="rebelion-cumbre" id="rebelion">
+        <div class="rebelion-content">
+            <div class="rebelion-text" id="rebelionText">
+                <h2>Rebelión en la Cumbre</h2>
+                <p class="narrative-paragraph">En 1816, mientras las fuerzas realistas dominaban gran parte de Sudamérica, José de San Martín concibió un plan audaz desde las alturas de Mendoza. Desde el campamento de Plumerillo, el Libertador forjaría una de las hazañas militares más extraordinarias de la historia.</p>
+                <p class="narrative-paragraph">La cordillera de los Andes, esa muralla natural que parecía infranqueable, se convertiría en el escenario de una gesta épica que cambiaría el destino de América para siempre.</p>
+            </div>
+            <div class="rebelion-image" id="rebelionImage">
+                <div class="image-placeholder">
+                    <img src="plumerillo.jpg" alt="Campamento del Plumerillo" style="width:100%; border-radius: 0.5rem;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- El Plan Maestro - Nueva sección con degradado y texto centrado -->
+    <section class="plan-maestro" id="plan">
+        <div class="plan-text" id="planText">
+            <h2>El Plan Maestro</h2>
+            <p class="narrative-paragraph">Para concebir una empresa semejante, San Martín no solo pensó como militar, sino como estratega, estadista y visionario. Comprendía que la libertad del continente no podía alcanzarse defendiendo fronteras, sino cruzándolas. La cordillera, que para muchos era un muro infranqueable, se transformó en el eje de su plan: cruzarla para liberar Chile, y desde allí, avanzar hacia Perú, el último bastión realista en Sudamérica.</p>
+            <p class="narrative-paragraph">Desde el campamento de El Plumerillo, a las afueras de Mendoza, comenzó a tomar forma una hazaña sin precedentes. Allí, a los pies de los Andes, se organizó, entrenó y abasteció al Ejército de los Andes, una fuerza compuesta por criollos, mestizos, afrodescendientes e incluso antiguos esclavos, unidos por un mismo propósito: la independencia.</p>
+            <p class="narrative-paragraph">Pero lo que parecía una locura desde lo geográfico era aún más ambicioso en términos logísticos. Había que recorrer cientos de kilómetros por senderos montañosos, soportar temperaturas extremas y trasladar no solo tropas, sino también armamento, cañones y víveres. El cruce era, en sí mismo, una gesta que desafiaba la razón y el tiempo.</p>
+            <p class="narrative-paragraph">Para entender la magnitud de esta proeza, es importante dimensionar el trayecto que separa el campamento de Plumerillo de la ciudad de Santiago de Chile, objetivo central de la campaña. A continuación, te invitamos a recorrer visualmente esa distancia, para apreciar no solo los kilómetros que los separan, sino la inmensidad del desafío que San Martín y sus hombres decidieron enfrentar.</p>
+        </div>
+    </section>
+
+    <!-- Flourish Scrollytelling Section - Diseño profesional -->
+    <section class="flourish-scrolly-section" id="flourishScrolly">
+        <div class="flourish-scrolly-container">
+            <!-- Gráfico centrado y elegante -->
+            <div class="flourish-graphic">
+                <div class="flourish-embed-container">
+                    <!-- Slide 1: Soldados -->
+                    <div class="flourish-viz active" id="viz-0">
+                        <iframe 
+                            src="https://flo.uri.sh/visualisation/23801784/embed" 
+                            title="Soldados del Ejército de los Andes"
+                            sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation">
+                        </iframe>
+                    </div>
+                    
+                    <!-- Slide 2: Milicianos -->
+                    <div class="flourish-viz" id="viz-1">
+                        <iframe 
+                            src="https://flo.uri.sh/visualisation/23802819/embed" 
+                            title="Milicianos y Tropas de Auxilio"
+                            sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation">
+                        </iframe>
+                    </div>
+                    
+                    <!-- Slide 3: Caballos -->
+                    <div class="flourish-viz" id="viz-2">
+                        <iframe 
+                            src="https://flo.uri.sh/visualisation/23803313/embed" 
+                            title="Caballos de Guerra"
+                            sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation">
+                        </iframe>
+                    </div>
+                    
+                    <!-- Slide 4: Mulas -->
+                    <div class="flourish-viz" id="viz-3">
+                        <iframe 
+                            src="https://flo.uri.sh/visualisation/23803665/embed" 
+                            title="Mulas para el Transporte"
+                            sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Textos elegantes superpuestos -->
+            <div class="flourish-steps">
+                <div class="flourish-step active" data-slide="0">
+                    <div class="flourish-step-content">
+                        <h3>⚔️ Los Soldados</h3>
+                        <p>3,800 soldados de diversas nacionalidades conformaron el núcleo del Ejército de los Andes. Veteranos de las guerras de independencia, milicianos locales y voluntarios unidos por el sueño de la libertad americana. Cada uno llevaba consigo la esperanza de un continente.</p>
+                    </div>
+                </div>
+                
+                <div class="flourish-step" data-slide="1">
+                    <div class="flourish-step-content">
+                        <h3>🎒 Los Milicianos</h3>
+                        <p>1,200 milicianos formaron la tropa de auxilio, encargados de la conducción de víveres y municiones. Sin ellos, la hazaña habría sido imposible. Cargaron con las provisiones, las armas y los sueños de toda una nación a través de los pasos más peligrosos del mundo.</p>
+                    </div>
+                </div>
+                
+                <div class="flourish-step" data-slide="2">
+                    <div class="flourish-step-content">
+                        <h3>🐎 Los Caballos</h3>
+                        <p>1,600 caballos de pelea acompañaron al ejército. Estos nobles animales, entrenados para la batalla, debieron adaptarse a las condiciones extremas de la alta montaña. Muchos no sobrevivieron al frío y la altitud, pero su sacrificio fue parte del precio de la libertad.</p>
+                    </div>
+                </div>
+                
+                <div class="flourish-step" data-slide="3">
+                    <div class="flourish-step-content">
+                        <h3>🫏 Las Mulas</h3>
+                        <p>10,000 mulas fueron los verdaderos héroes silenciosos del cruce. Todo el personal realizó la travesía montado en estos resistentes animales, únicos capaces de soportar las alturas extremas y los senderos traicioneros de los Andes. Sin ellas, el cruce habría sido imposible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soldados Scrollytelling - Nuevo diseño -->
+    <section class="soldados-scrolly-section" id="soldadosScrolly">
+        <div class="soldados-scrolly-wrapper">
+            <div class="soldados-sticky-image-container">
+                <img id="soldadoImage" src="4.jpg" alt="El Veterano" class="soldado-current-image">
+            </div>
+            <div class="soldados-scroll-text-container">
+                <div class="soldado-text-block" data-image-src="4.jpg">
+                    <h3>El Veterano</h3>
+                    <p class="narrative-paragraph">
+                        A sus 35 años, el Veterano ya había combatido en campañas militares anteriores y conocía el rigor de la guerra.
+                        Fue pieza clave en la formación de los más jóvenes, transmitiendo disciplina, resistencia y coraje.
+                        Su experiencia resultó fundamental para mantener la cohesión del grupo en los tramos más difíciles del cruce.
+                        Pese al cansancio acumulado y el peso de la responsabilidad, avanzó sin dudar, sabiendo que su lucha era por la libertad de un continente.
+                    </p>
+                    <p class="narrative-paragraph">
+                        Su mirada, curtida por el sol y el viento de innumerables batallas, reflejaba la determinación de un hombre que había visto demasiado y que ahora luchaba por un futuro mejor. Llevaba consigo las cicatrices de la historia, pero también la esperanza de un nuevo amanecer para su tierra. Cada paso que daba en la montaña era un eco de los sacrificios pasados y una promesa de la libertad que estaba por venir. Su presencia infundía calma y fortaleza en los momentos de mayor adversidad.
+                    </p>
+                </div>
+                <div class="soldado-text-block" data-image-src="2.jpg">
+                    <h3>El Joven</h3>
+                    <p class="narrative-paragraph">
+                        El Joven era la esperanza encarnada. Apenas superaba la adolescencia, pero se enlistó con fervor patriótico y una convicción inquebrantable.
+                        No había conocido el campo de batalla, pero su energía fue vital en la logística, el cuidado de animales y el ánimo del resto.
+                        En el cruce de los Andes, aprendió de golpe lo que era el sacrificio, enfrentando la altura, el frío y el miedo, con la mirada puesta en un ideal que aún no comprendía del todo, pero que lo inspiraba.
+                    </p>
+                    <p class="narrative-paragraph">
+                        Sus manos, aún sin endurecer por el trabajo pesado, se aferraban a su fusil con una mezcla de temor y valentía. Representaba a la nueva generación, aquellos que heredarían la libertad por la que sus mayores estaban luchando. Su entusiasmo era contagioso, y a menudo, su risa o su canto rompían el silencio opresivo de la cordillera, levantando el espíritu de sus compañeros.
+                    </p>
+                </div>
+                <div class="soldado-text-block" data-image-src="3.jpg">
+                    <h3>El Miliciano</h3>
+                    <p class="narrative-paragraph">
+                        Campesino devenido soldado, el Miliciano se unió a las tropas como tantos otros voluntarios que dejaron sus tierras para luchar por la independencia.
+                        No portaba uniforme regular ni recibía paga, pero aportaba coraje y conocimiento del terreno.
+                        Su espíritu práctico, su temple y su capacidad de improvisación fueron esenciales para resolver problemas en plena montaña.
+                        Fue símbolo de un ejército popular, formado por hombres comunes que lograron hazañas extraordinarias.
+                    </p>
+                    <p class="narrative-paragraph">
+                        Conocía cada sendero, cada atajo, cada refugio natural en la montaña. Su conocimiento del terreno era tan valioso como cualquier arma, guiando a sus compañeros a través de los pasos más traicioneros y asegurando que nadie se quedara atrás. Su conexión con la tierra y su instinto de supervivencia fueron cruciales para sortear los peligros ocultos de la cordillera.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Video Section - Normal playback -->
+    <section class="video-section" id="videoSection2">
+        <div class="video-container">
+            <video id="v1" controls preload="auto">
+                <source src="placeholder-video-2.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento video.
+            </video>
+        </div>
+    </section>
+
+    <!-- Andes Scrollytelling Section - Efecto de capas acumulativas -->
+    <section class="andes-scrolly-section" id="andesScrolly">
+        <div class="andes-scrolly-container">
+            <!-- Contenedor para las imágenes que se van superponiendo -->
+            <div class="andes-background-layers">
+                <img src="Comecaballos_2.png" alt="Cordillera 2" class="andes-background-image" id="andes-bg-0">
+                <img src="Portilllo_3.png" alt="Cordillera 3" class="andes-background-image" id="andes-bg-1">
+                <img src="Patos_4.png" alt="Cordillera 4" class="andes-background-image" id="andes-bg-2">
+                <img src="Guana_5.png" alt="Cordillera 5" class="andes-background-image" id="andes-bg-3">
+                <img src="uspallata_6.png" alt="Cordillera 6" class="andes-background-image" id="andes-bg-4">
+            </div>
+            
+            <!-- Textos elegantes superpuestos -->
+            <div class="andes-steps">
+                <div class="andes-step active" data-slide="0">
+                    <div class="andes-step-content">
+                        <h3>❄️ El Desafío del Clima</h3>
+                        <p>Las temperaturas descendían hasta -20°C en las noches de alta montaña. El aire enrarecido dificultaba la respiración tanto de hombres como de animales. Las tormentas de nieve podían durar días, convirtiendo los senderos en trampas mortales para los desprevenidos.</p>
+                    </div>
+                </div>
+                
+                <div class="andes-step" data-slide="1">
+                    <div class="andes-step-content">
+                        <h3>🗻 La Cordillera Infinita</h3>
+                        <p>La cordillera de los Andes se extiende a lo largo de 7.000 km, cruzando toda Sudamérica. Es la columna vertebral del continente, una muralla imponente que desafía a todo aquel que intenta atravesarla. Fue este obstáculo el que San Martín y su ejército decidieron conquistar.</p>
+                    </div>
+                </div>
+                
+                <div class="andes-step" data-slide="2">
+                    <div class="andes-step-content">
+                        <h3>⛰️ El Techo de América</h3>
+                        <p>El Aconcagua, con sus 6.962 metros de altura, es la cima más alta del continente americano. Su presencia majestuosa domina el paisaje andino. Para cruzar hacia Chile, el ejército debió rodearlo, enfrentando temperaturas extremas y pendientes traicioneras.</p>
+                    </div>
+                </div>
+                
+                <div class="andes-step" data-slide="3">
+                    <div class="andes-step-content">
+                        <h3>⚰️ La Montaña Mortal</h3>
+                        <p>La cordillera cobra más de 100 vidas cada año. Avalanchas, tormentas, congelamiento y el "mal de altura" son solo algunas de las amenazas. En 1817, San Martín lideró a miles de hombres por esos senderos mortales… y casi todos llegaron del otro lado.</p>
+                    </div>
+                </div>
+                
+                <div class="andes-step" data-slide="4">
+                    <div class="andes-step-content">
+                        <h3>🧭 Diversidad de Terrenos</h3>
+                        <p>Desde desiertos áridos en el norte hasta bosques lluviosos en el sur, los Andes presentan una variedad de paisajes única. Esta diversidad obligó a adaptar las rutas del cruce según el terreno y la altitud.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preparativos Scrollytelling Section - (Reemplaza Cordillera Dibujos) -->
+    <section class="preparativos-scrolly-section" id="preparativosScrolly">
+        <div class="preparativos-scrolly-container">
+            <!-- Contenedor para las imágenes de fondo -->
+            <div class="preparativos-background-layers">
+                <div class="preparativos-background-image" id="preparativos-bg-0"></div>
+                <div class="preparativos-background-image" id="preparativos-bg-1"></div>
+                <div class="preparativos-background-image" id="preparativos-bg-2"></div>
+                <div class="preparativos-background-image" id="preparativos-bg-3"></div>
+            </div>
+            
+            <!-- Textos superpuestos -->
+            <div class="preparativos-steps">
+                <div class="preparativos-step active" data-slide="0">
+                    <div class="preparativos-step-content">
+                        <h3>🌽 Acopio de Víveres</h3>
+                        <p>Preparar el cruce significó reunir provisiones para más de 5.000 hombres y 10.000 mulas. Charqui, galleta de maíz, vino y aguardiente fueron fundamentales para soportar las bajas temperaturas y el desgaste físico. La previsión fue la clave para evitar el colapso del ejército en la montaña.</p>
+                    </div>
+                </div>
+                
+                <div class="preparativos-step" data-slide="1">
+                    <div class="preparativos-step-content">
+                        <h3>⚔️ Fabricación de Armamento</h3>
+                        <p>En el campamento de El Plumerillo, se forjaron cañones, fusiles y bayonetas. La maestranza de guerra de Mendoza se convirtió en un centro vital para equipar al ejército con el armamento necesario para enfrentar a las fuerzas realistas. Cada pieza era crucial para el éxito de la misión.</p>
+                    </div>
+                </div>
+                
+                <div class="preparativos-step" data-slide="2">
+                    <div class="preparativos-step-content">
+                        <h3>🧥 Vestimenta y Equipo</h3>
+                        <p>El frío extremo de los Andes exigió uniformes adaptados: ponchos, gorros de lana, chaquetas gruesas y botas resistentes. Gran parte de la vestimenta fue confeccionada por mujeres mendocinas, que trabajaron sin descanso para asegurar que los soldados estuvieran protegidos del clima hostil.</p>
+                    </div>
+                </div>
+                
+                <div class="preparativos-step" data-slide="3">
+                    <div class="preparativos-step-content">
+                        <h3>🤫 Inteligencia y Engaño</h3>
+                        <p>San Martín empleó una brillante "Guerra de Zapa", una estrategia de desinformación que engañó a los realistas sobre sus verdaderas intenciones y rutas. Espías, cartas falsas y rumores controlados fueron herramientas clave para sembrar confusión en el enemigo y asegurar el factor sorpresa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logística y Previsión - (Reemplaza Info de los Andes) -->
+    <section class="logistica-info" id="logisticaInfo">
+        <h2 id="logisticaInfoTitle">La Logística de una Proeza</h2>
+        <div class="logistica-stats">
+            <div class="logistica-stat-card" id="logisticaStat1">
+                <div class="logistica-stat-number">5.200</div>
+                <div class="logistica-stat-label">Hombres</div>
+                <div class="logistica-stat-desc">El ejército completo, unificado por un ideal</div>
+            </div>
+            <div class="logistica-stat-card" id="logisticaStat2">
+                <div class="logistica-stat-number">10.000</div>
+                <div class="logistica-stat-label">Mulas</div>
+                <div class="logistica-stat-desc">Esenciales para el transporte de cargas pesadas</div>
+            </div>
+            <div class="logistica-stat-card" id="logisticaStat3">
+                <div class="logistica-stat-number">1.600</div>
+                <div class="logistica-stat-label">Caballos</div>
+                <div class="logistica-stat-desc">La caballería, vital para las batallas rápidas</div>
+            </div>
+            <div class="logistica-stat-card" id="logisticaStat4">
+                <div class="logistica-stat-number">20</div>
+                <div class="logistica-stat-label">Cañones</div>
+                <div class="logistica-stat-desc">Artillería forjada en Mendoza para la campaña</div>
+            </div>
+            <div class="logistica-stat-card" id="logisticaStat5">
+                <div class="logistica-stat-number">7.000</div>
+                <div class="logistica-stat-label">Botas</div>
+                <div class="logistica-stat-desc">Confeccionadas para proteger del frío extremo</div>
+            </div>
+            <div class="logistica-stat-card" id="logisticaStat6">
+                <div class="logistica-stat-number">2.000</div>
+                <div class="logistica-stat-label">Sables</div>
+                <div class="logistica-stat-desc">Armas blancas para el combate cuerpo a cuerpo</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 18/1/1817 - El Inicio de una Leyenda -->
+    <section class="inicio-leyenda" id="inicioLeyenda">
+        <div class="inicio-content" id="inicioContent">
+            <div class="fecha-grande">18/1/1817</div>
+            <h2>El Inicio de una Leyenda</h2>
+        </div>
+    </section>
+
+    <!-- Los Pasos Scrollytelling - Nueva sección -->
+    <section class="pasos-scrolly-section" id="pasosScrolly">
+        <div class="pasos-title">
+            <h2>Los Pasos de la Libertad</h2>
+        </div>
+        
+        <div class="pasos-scrolly-container">
+            <!-- Contenidor para las imágenes de fondo -->
+            <div class="pasos-background-layers">
+                <div class="paso-background-image" id="paso-bg-0"></div>
+                <div class="paso-background-image" id="paso-bg-1"></div>
+                <div class="paso-background-image" id="paso-bg-2"></div>
+                <div class="paso-background-image" id="paso-bg-3"></div>
+                <div class="paso-background-image" id="paso-bg-4"></div>
+                <div class="paso-background-image" id="paso-bg-5"></div>
+            </div>
+            
+            <!-- Textos superpuestos -->
+            <div class="pasos-steps">
+                <div class="paso-step active" data-slide="0">
+                    <div class="paso-step-content">
+                        <h3>Paso de Come-Caballos</h3>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Cantidad de hombres:</span>
+                            <span class="paso-detail-value">130 hombres</span>
+                        </div>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Duración del viaje:</span>
+                            <span class="paso-detail-value">15 días</span>
+                        </div>
+                        <div class="paso-objetivo">
+                            <strong>Objetivo militar:</strong> Copiapó y Huasco. Esta ruta, aunque secundaria, fue crucial para desviar la atención realista hacia el norte, permitiendo que las fuerzas principales avanzaran sin ser detectadas. Las condiciones extremas de este paso pusieron a prueba la resistencia de los soldados.
+                        </div>
+                        <div class="paso-image-container">
+                            <img src="Comecaballos_2.png" alt="Paso de Come-Caballos" class="paso-info-image">
+                        </div>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Altura Máxima:</span>
+                            <span class="paso-detail-value">~4.000 m</span>
+                        </div>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Longitud del Paso:</span>
+                            <span class="paso-detail-value">~150 km</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="paso-step" data-slide="1">
+                    <div class="paso-step-content">
+                        <h3>Paso de Guana</h3>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Cantidad de hombres:</span>
+                            <span class="paso-detail-value">140 hombres</span>
+                        </div>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Duración del viaje:</span>
+                            <span class="paso-detail-value">25 días</span>
+                        </div>
+                        <div class="paso-objetivo">
+                            <strong>Objetivo militar:</strong> Coquimbo y La Serena. Este paso, uno de los más largos y desafiantes, sirvió para crear una amenaza creíble en la costa chilena, forzando a los realistas a dividir sus tropas y debilitar sus defensas centrales. La travesía fue un testimonio de la tenacidad del ejército.
+                        </div>
+                        <div class="paso-image-container">
+                            <img src="Guana_5.png" alt="Paso de Guana" class="paso-info-image">
+                        </div>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Altura Máxima:</span>
+                            <span class="paso-detail-value">~4.500 m</span>
+                        </div>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Longitud del Paso:</span>
+                            <span class="paso-detail-value">~200 km</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="paso-step" data-slide="2">
+                    <div class="paso-step-content">
+                        <h3>Paso de los Patos</h3>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Cantidad de hombres:</span>
+                            <span class="paso-detail-value">3.000 hombres</span>
+                        </div>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Duración del viaje:</span>
+                            <span class="paso-detail-value">19 días</span>
+                        </div>
+                        <div class="paso-objetivo">
+                            <strong>Objetivo militar:</strong> Caer sobre Santiago. Esta fue la ruta principal, elegida por San Martín por su dificultad y el elemento sorpresa que ofrecía. A pesar de las alturas extremas y el frío implacable, el grueso del ejército logró cruzar, demostrando una disciplina y resistencia sin precedentes.
+                        </div>
+                        <div class="paso-image-container">
+                            <img src="Patos_4.png" alt="Paso de los Patos" class="paso-info-image">
+                        </div>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Altura Máxima:</span>
+                            <span class="paso-detail-value">~4.200 m</span>
+                        </div>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Longitud del Paso:</span>
+                            <span class="paso-detail-value">~180 km</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="paso-step" data-slide="3">
+                    <div class="paso-step-content">
+                        <h3>Paso de Uspallata</h3>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Cantidad de hombres:</span>
+                            <span class="paso-detail-value">1.700 hombres</span>
+                        </div>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Duración del viaje:</span>
+                            <span class="paso-detail-value">15 días</span>
+                        </div>
+                        <div class="paso-objetivo">
+                            <strong>Objetivo militar:</strong> Reunirse en el Valle del Aconcagua. Esta ruta, más accesible, fue utilizada para el transporte de artillería pesada y suministros. Su éxito logístico fue tan vital como las maniobras militares, asegurando que el ejército tuviera los recursos necesarios para la batalla final.
+                        </div>
+                        <div class="paso-image-container">
+                            <img src="uspallata_6.png" alt="Paso de Uspallata" class="paso-info-image">
+                        </div>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Altura Máxima:</span>
+                            <span class="paso-detail-value">~3.200 m</span>
+                        </div>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Longitud del Paso:</span>
+                            <span class="paso-detail-value">~120 km</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="paso-step" data-slide="4">
+                    <div class="paso-step-content">
+                        <h3>Paso del Portillo</h3>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Cantidad de hombres:</span>
+                            <span class="paso-detail-value">155 hombres</span>
+                        </div>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Duración del viaje:</span>
+                            <span class="paso-detail-value">14 días</span>
+                        </div>
+                        <div class="paso-objetivo">
+                            <strong>Objetivo militar:</strong> Maniobra de distracción sobre San Gabriel. Una pequeña pero valiente columna se aventuró por este paso, creando una distracción efectiva en el sur. Su sacrificio y esfuerzo contribuyeron a la confusión del enemigo, facilitando el avance principal del ejército.
+                        </div>
+                        <div class="paso-image-container">
+                            <img src="Portilllo_3.png" alt="Paso del Portillo" class="paso-info-image">
+                        </div>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Altura Máxima:</span>
+                            <span class="paso-detail-value">~4.300 m</span>
+                        </div>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Longitud del Paso:</span>
+                            <span class="paso-detail-value">~100 km</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="paso-step" data-slide="5">
+                    <div class="paso-step-content">
+                        <h3>Paso del Planchón</h3>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Cantidad de hombres:</span>
+                            <span class="paso-detail-value">100 hombres</span>
+                        </div>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Duración del viaje:</span>
+                            <span class="paso-detail-value">19 días</span>
+                        </div>
+                        <div class="paso-objetivo">
+                            <strong>Objetivo militar:</strong> Curicó y Talca. La columna más austral, bajo el mando de Ramón Freire, realizó una travesía ardua para amenazar las posiciones realistas en el sur de Chile. Su incursión, aunque pequeña, fue fundamental para dispersar las fuerzas enemigas y asegurar el éxito de la campaña.
+                        </div>
+                        <div class="paso-image-container">
+                            <img src="planchon_final.png" alt="Paso del Planchón" class="paso-info-image">
+                        </div>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Altura Máxima:</span>
+                            <span class="paso-detail-value">~3.500 m</span>
+                        </div>
+                        <div class="paso-detail">
+                            <span class="paso-detail-label">Longitud del Paso:</span>
+                            <span class="paso-detail-value">~170 km</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chacabuco Scrollytelling Section - New 3-screen battle section -->
+    <section class="chacabuco-scrolly-section" id="chacabucoScrolly">
+        <!-- Screen 1: Gericault painting background -->
+        <div class="scroll-section chacabuco-screen-1">
+            <div class="scroll-text" id="chacabuco-text-1">
+                <h2>La Batalla por la Libertad</h2>
+                <p class="narrative-paragraph">Tras 24 días de travesía por los Andes, el Ejército Libertador se enfrentó a las fuerzas realistas en los llanos de Chacabuco. La victoria fue contundente: en menos de dos horas, San Martín había quebrado la resistencia española en Chile.</p>
+                <p class="narrative-paragraph">La mañana del 12 de febrero de 1817, el sol andino iluminó el campo de batalla, donde la estrategia y el coraje se unirían para cambiar el destino de un continente. La sorpresa fue total para las fuerzas realistas, que no esperaban un ataque tan audaz tras una travesía tan formidable.</p>
+            </div>
+        </div>
+
+        <!-- Screen 2: Vandorse painting background with split layout -->
+        <div class="scroll-section chacabuco-screen-2">
+            <div class="split-screen">
+                <div class="split-left">
+                    <div class="split-text" id="chacabuco-text-2">
+                        <h3>La Estrategia en Acción</h3>
+                        <p class="narrative-paragraph">La batalla de Chacabuco fue una combinación de estrategia y valentía. Los datos muestran cómo se desarrolló el enfrentamiento y cuál fue su impacto.</p>
+                        <p class="narrative-paragraph">San Martín dividió sus fuerzas para envolver al enemigo, una táctica brillante que desorientó a los realistas y les impidió organizar una defensa coherente. La caballería jugó un papel crucial, flanqueando las posiciones enemigas y sembrando el caos en sus filas.</p>
+                    </div>
+                </div>
+                <div class="split-right">
+                    <div class="embed-container" id="embed-1">
+                        <div class="flourish-embed-1">
+                            <br>
+                            <div class="flourish-embed flourish-chart" data-src="visualisation/24248422"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/24248422/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+                        </div>
+                    </div>
+                    <div class="embed-container" id="embed-2">
+                        <div class="flourish-embed-2">
+                            <br>
+                            <div class="flourish-embed flourish-chart" data-src="visualisation/24247201"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/24247201/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 3: Abrazo de Maipú background -->
+        <div class="scroll-section chacabuco-screen-3">
+            <div class="scroll-text" id="chacabuco-text-3">
+                <h2>El Abrazo de la Victoria</h2>
+                <p class="narrative-paragraph">La victoria fue contundente: en menos de dos horas, San Martín había quebrado la resistencia española en Chile.</p>
+                <p class="narrative-paragraph">El fin de la batalla se conmemora con un abrazo entre el general José de San Martín y el general Bernardo O'Higgins, un símbolo de la unión y el triunfo de la causa independentista.</p>
+                <p class="narrative-paragraph">Esta batalla no solo aseguró la independencia de Chile, sino que abrió el camino hacia Perú, completando el sueño continental de San Martín. Fue un hito que consolidó la libertad en el Cono Sur y sentó las bases para futuras campañas libertadoras.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="plan-gloria" id="gloria">
+        <div class="plan-text visible">
+            <h2>El Rumbo Hacia la Gloria</h2>
+            <p class="narrative-paragraph">Tras el triunfo en Chacabuco y el simbólico abrazo con O’Higgins, San Martín no detuvo su marcha. Sabía que la victoria en Chile era solo un peldaño más en una escalera mucho más alta: la independencia de toda Sudamérica.</p>
+            <p class="narrative-paragraph">Los meses posteriores fueron de organización y reconstrucción. Santiago celebraba, pero el norte aún estaba bajo dominio español. La resistencia realista, lejos de extinguirse, se reagrupaba en el sur del país. Mientras tanto, San Martín impulsaba la formación de un gobierno independiente, respaldaba la figura de O’Higgins como Director Supremo y reorganizaba al Ejército para enfrentar nuevos desafíos.</p>
+            <p class="narrative-paragraph">El enemigo más fuerte aún lo esperaba más al norte: el Virreinato del Perú, el corazón del poder realista en América del Sur. San Martín comprendía que si quería liberar definitivamente al continente, debía cruzar una vez más los límites de lo posible. Fue entonces cuando comenzó a gestarse la expedición libertadora al Perú, una empresa tan ambiciosa como el cruce de los Andes.</p>
+            <p class="narrative-paragraph">Desde el puerto de Valparaíso, comenzaron los preparativos para una campaña naval sin precedentes. Con la ayuda del almirante Thomas Cochrane, San Martín creó una escuadra que zarpó hacia las costas del Perú, llevando consigo no solo soldados, sino también una idea: la libertad como destino compartido de los pueblos sudamericanos.</p>
+            <p class="narrative-paragraph">Aquel hombre que había desafiado la cordillera, ahora desafiaba el océano. Y con cada paso, su figura crecía, no como conquistador, sino como libertador. Su lucha ya no era solo por Argentina, ni siquiera por Chile, sino por el continente entero. La victoria en Chacabuco no fue el final, sino el punto de inflexión que abrió el camino hacia Lima, hacia la independencia del Perú y hacia el legado inmortal de una causa continental.</p>
+        </div>
+    </section>
+
+    <!-- Spacer para scroll -->
+    <div style="height: 100vh;"></div>
+
+    <script>
+        // Variables globales
+        const windSound = document.getElementById('windSound');
+        const ambientWind = document.getElementById('ambientWind');
+        const video = document.getElementById('v0');
+        const videoV1 = document.getElementById('v1');
+        let ticking = false;
+        let currentSlide = 0;
+        let currentPasoSlide = 0;
+        let currentPreparativosSlide = 0; // New variable for preparativos scrollytelling
+
+        // Array para trackear qué imágenes ya han aparecido (no desaparecen)
+        let andesImagesShown = [false, false, false, false, false];
+
+        // Función para verificar si un elemento está en el viewport
+        function isInViewport(element, threshold = 0.3) {
+            const rect = element.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            return (
+                rect.top <= windowHeight * (1 - threshold) &&
+                rect.bottom >= windowHeight * threshold
+            );
+        }
+
+        // Función para verificar si un elemento está parcialmente visible
+        function isPartiallyVisible(element, threshold = 0.1) {
+            const rect = element.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            return (
+                rect.top < windowHeight * (1 - threshold) &&
+                rect.bottom > windowHeight * threshold
+            );
+        }
+
+        // Función para manejar efectos del hero
+        function updateHeroEffects() {
+            const heroTitle = document.getElementById('heroTitle');
+            const heroSubtitle = document.getElementById('heroSubtitle');
+            const scrollTop = window.pageYOffset;
+            const windowHeight = window.innerHeight;
+            
+            if (scrollTop < windowHeight) {
+                const scrollProgress = scrollTop / windowHeight;
+                const opacity = Math.max(0, 1 - scrollProgress * 2);
+                const translateY = scrollProgress * 50;
+                
+                heroTitle.style.opacity = opacity;
+                heroTitle.style.transform = `translateY(${translateY}px)`;
+                
+                heroSubtitle.style.opacity = opacity;
+                heroSubtitle.style.transform = `translateY(${translateY * 1.2}px)`;
+            }
+        }
+
+        // Función para manejar videos normales
+        function handleVideoPlayback() {
+            const videoSection1 = document.getElementById('videoSection1');
+            const videoSection2 = document.getElementById('videoSection2');
+            
+            // Check first video
+            if (isInViewport(videoSection1, 0.5)) {
+                if (video.paused) {
+                    video.play().catch(() => {});
+                    windSound.play().catch(() => {});
+                }
+            } else {
+                if (!video.paused) {
+                    video.pause();
+                    windSound.pause();
+                }
+            }
+            
+            // Check second video
+            if (isInViewport(videoSection2, 0.5)) {
+                if (videoV1.paused) {
+                    videoV1.play().catch(() => {});
+                    ambientWind.play().catch(() => {});
+                }
+            } else {
+                if (!videoV1.paused) {
+                    videoV1.pause();
+                    ambientWind.pause();
+                }
+            }
+        }
+
+        // Función para cambiar visualización de Flourish
+        function changeVisualization(slideIndex) {
+            const allViz = document.querySelectorAll('.flourish-viz');
+            allViz.forEach(viz => viz.classList.remove('active'));
+            
+            const currentViz = document.getElementById(`viz-${slideIndex}`);
+            if (currentViz) {
+                currentViz.classList.add('active');
+            }
+        }
+
+        // Función para manejar el scrollytelling de Flourish
+        function updateFlourishScrolly() {
+            const flourishSection = document.getElementById('flourishScrolly');
+            const flourishSteps = document.querySelectorAll('.flourish-step');
+            
+            if (!isPartiallyVisible(flourishSection)) return;
+
+            const sectionRect = flourishSection.getBoundingClientRect();
+            const sectionHeight = flourishSection.offsetHeight;
+            const windowHeight = window.innerHeight;
+            
+            const scrollProgress = Math.max(0, Math.min(1, 
+                (windowHeight - sectionRect.top) / (sectionHeight + windowHeight)
+            ));
+
+            const totalSlides = flourishSteps.length;
+            const newSlide = Math.floor(scrollProgress * totalSlides);
+            const clampedSlide = Math.max(0, Math.min(totalSlides - 1, newSlide));
+
+            if (clampedSlide !== currentSlide) {
+                currentSlide = clampedSlide;
+                changeVisualization(currentSlide);
+            }
+
+            flourishSteps.forEach((step, index) => {
+                if (index === currentSlide) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+        }
+
+        // Función para manejar el scrollytelling de los Andes con efecto acumulativo
+        function updateAndesScrolly() {
+            const andesSection = document.getElementById('andesScrolly');
+            const andesSteps = document.querySelectorAll('.andes-step');
+            const andesImages = document.querySelectorAll('.andes-background-image');
+            
+            if (!isPartiallyVisible(andesSection)) return;
+
+            const sectionRect = andesSection.getBoundingClientRect();
+            const sectionHeight = andesSection.offsetHeight;
+            const windowHeight = window.innerHeight;
+            
+            const scrollProgress = Math.max(0, Math.min(1, 
+                (windowHeight - sectionRect.top) / (sectionHeight + windowHeight)
+            ));
+
+            const totalSteps = andesSteps.length;
+            const newStep = Math.floor(scrollProgress * totalSteps);
+            const clampedStep = Math.max(0, Math.min(totalSteps - 1, newStep));
+
+            andesSteps.forEach((step, index) => {
+                if (index === clampedStep) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+
+            andesImages.forEach((image, index) => {
+                if (index <= clampedStep) {
+                    image.classList.add('visible');
+                } else {
+                    image.classList.remove('visible');
+                }
+            });
+        }
+
+        // Función para manejar el scrollytelling de los Pasos
+        function updatePasosScrolly() {
+            const pasosSection = document.getElementById('pasosScrolly');
+            const pasoSteps = document.querySelectorAll('.paso-step');
+            const pasoImages = document.querySelectorAll('.paso-background-image');
+            
+            if (!pasosSection) return;
+
+            const sectionTop = pasosSection.offsetTop;
+            const windowHeight = window.innerHeight;
+            const scrollTop = window.pageYOffset;
+
+            // Calcular la posición de scroll relativa al inicio de la sección de pasos
+            const scrollInPasosSection = scrollTop - sectionTop;
+
+            // La altura de cada paso en píxeles (250vh)
+            const stepScrollHeight = 250 * windowHeight / 100; 
+
+            // Determinar el paso activo dividiendo el scroll relativo por la altura de cada paso
+            let newStep = Math.floor(scrollInPasosSection / stepScrollHeight);
+
+            // Asegurarse de que el índice esté dentro de los límites válidos
+            newStep = Math.max(0, Math.min(pasoSteps.length - 1, newStep));
+
+            if (newStep !== currentPasoSlide) {
+                currentPasoSlide = newStep;
+            }
+
+            pasoSteps.forEach((step, index) => {
+                if (index === currentPasoSlide) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+
+            pasoImages.forEach((image, index) => {
+                if (index === currentPasoSlide) {
+                    image.classList.add('visible');
+                } else {
+                    image.classList.remove('visible');
+                }
+            });
+        }
+
+        // Function to handle Chacabuco scrollytelling
+        function updateChacabucoScrolly() {
+            const chacabucoSection = document.getElementById('chacabucoScrolly');
+            if (!chacabucoSection) return;
+
+            const textElements = [
+                document.getElementById('chacabuco-text-1'),
+                document.getElementById('chacabuco-text-2'),
+                document.getElementById('chacabuco-text-3')
+            ];
+
+            const embedElements = [
+                document.getElementById('embed-1'),
+                document.getElementById('embed-2')
+            ];
+
+            textElements.forEach(element => {
+                if (element && isInViewport(element, 0.4)) {
+                    element.classList.add('visible');
+                } else if (element) {
+                    element.classList.remove('visible'); // Ensure elements hide when out of view
+                }
+            });
+
+            embedElements.forEach(element => {
+                if (element && isInViewport(element, 0.4)) {
+                    element.classList.add('visible');
+                } else if (element) {
+                    element.classList.remove('visible'); // Ensure elements hide when out of view
+                }
+            });
+        }
+
+        // New function for Preparativos Scrollytelling
+        function updatePreparativosScrolly() {
+            const preparativosSection = document.getElementById('preparativosScrolly');
+            const preparativosSteps = document.querySelectorAll('.preparativos-step');
+            const preparativosImages = document.querySelectorAll('.preparativos-background-image');
+            
+            if (!isPartiallyVisible(preparativosSection)) return;
+
+            const sectionRect = preparativosSection.getBoundingClientRect();
+            const sectionHeight = preparativosSection.offsetHeight;
+            const windowHeight = window.innerHeight;
+            
+            const scrollProgress = Math.max(0, Math.min(1, 
+                (windowHeight - sectionRect.top) / (sectionHeight + windowHeight)
+            ));
+
+            const totalSteps = preparativosSteps.length;
+            const newStep = Math.floor(scrollProgress * totalSteps);
+            const clampedStep = Math.max(0, Math.min(totalSteps - 1, newStep));
+
+            if (clampedStep !== currentPreparativosSlide) {
+                currentPreparativosSlide = clampedStep;
+            }
+
+            preparativosSteps.forEach((step, index) => {
+                if (index === currentPreparativosSlide) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+
+            preparativosImages.forEach((image, index) => {
+                if (index === currentPreparativosSlide) {
+                    image.classList.add('visible');
+                } else {
+                    image.classList.remove('visible');
+                }
+            });
+        }
+
+
+        // Función para manejar aparición de elementos
+        function updateElementVisibility() {
+            const elements = [
+                { id: 'rebelionText', delay: 0 },
+                { id: 'rebelionImage', delay: 200 },
+                { id: 'planText', delay: 0 },
+                { id: 'logisticaInfoTitle', delay: 0 }, /* Updated ID */
+                { id: 'logisticaStat1', delay: 0 }, /* Updated ID */
+                { id: 'logisticaStat2', delay: 100 }, /* Updated ID */
+                { id: 'logisticaStat3', delay: 200 }, /* Updated ID */
+                { id: 'logisticaStat4', delay: 300 }, /* New ID */
+                { id: 'logisticaStat5', delay: 400 }, /* New ID */
+                { id: 'logisticaStat6', delay: 500 }, /* New ID */
+                { id: 'inicioContent', delay: 0 },
+                { id: 'finalTributeContent', delay: 0 }
+            ];
+
+            elements.forEach(({ id, delay }) => {
+                const element = document.getElementById(id);
+                if (element && !element.classList.contains('visible') && isInViewport(element, 0.4)) {
+                    setTimeout(() => {
+                        element.classList.add('visible');
+                    }, delay);
+                } else if (element && element.classList.contains('visible') && !isInViewport(element, 0.4)) {
+                    element.classList.remove('visible'); // Hide when out of view
+                }
+            });
+        }
+
+        // Función principal de scroll optimizada
+        function handleScroll() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    updateHeroEffects();
+                    handleVideoPlayback();
+                    updateFlourishScrolly();
+                    updateAndesScrolly();
+                    updatePasosScrolly();
+                    updateChacabucoScrolly();
+                    updatePreparativosScrolly(); // Call new function
+                    updateElementVisibility();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        // New variables for Soldados Scrollytelling
+        const soldadoImage = document.getElementById('soldadoImage');
+        const soldadoTextBlocks = document.querySelectorAll('.soldado-text-block');
+        let currentSoldadoImageSrc = '';
+
+        // Intersection Observer for Soldados Scrollytelling
+        const soldadoObserverOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5 // Trigger when 50% of the block is visible
+        };
+
+        const soldadoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const newImageSrc = entry.target.getAttribute('data-image-src');
+                    if (newImageSrc && newImageSrc !== currentSoldadoImageSrc) {
+                        // Add fade-out class, then change src, then remove fade-out
+                        soldadoImage.classList.add('fade-out');
+                        setTimeout(() => {
+                            soldadoImage.src = newImageSrc;
+                            soldadoImage.alt = entry.target.querySelector('h3').textContent; // Update alt text
+                            soldadoImage.classList.remove('fade-out');
+                            currentSoldadoImageSrc = newImageSrc;
+                        }, 400); // Half of the transition duration
+                    }
+                    // Add active class to the text block
+                    soldadoTextBlocks.forEach(block => block.classList.remove('active'));
+                    entry.target.classList.add('active');
+                } else {
+                    // Optional: remove active class when not intersecting
+                    entry.target.classList.remove('active');
+                }
+            });
+        }, soldadoObserverOptions);
+
+        // Observe each text block
+        soldadoTextBlocks.forEach(block => {
+            soldadoObserver.observe(block);
+        });
+
+        // Initial setup for the first image and text block
+        document.addEventListener('DOMContentLoaded', () => {
+            if (soldadoTextBlocks.length > 0) {
+                const firstBlock = soldadoTextBlocks[0];
+                const initialImageSrc = firstBlock.getAttribute('data-image-src');
+                if (initialImageSrc) {
+                    soldadoImage.src = initialImageSrc;
+                    soldadoImage.alt = firstBlock.querySelector('h3').textContent;
+                    currentSoldadoImageSrc = initialImageSrc;
+                }
+                firstBlock.classList.add('active');
+            }
+            
+            // Inicializar - mostrar la primera imagen inmediatamente (Andes)
+            const firstAndesImage = document.getElementById('andes-bg-0');
+            if (firstAndesImage) {
+                firstAndesImage.classList.add('visible');
+                andesImagesShown[0] = true;
+            }
+
+            // Inicializar primera imagen de pasos
+            const firstPasoImage = document.getElementById('paso-bg-0');
+            if (firstPasoImage) {
+                firstPasoImage.classList.add('visible');
+            }
+
+            // Inicializar primera imagen de preparativos
+            const firstPreparativosImage = document.getElementById('preparativos-bg-0');
+            if (firstPreparativosImage) {
+                firstPreparativosImage.classList.add('visible');
+            }
+        });
+
+        // Event listeners principales
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('load', handleScroll);
+
+        // Inicializar
+        handleScroll();
+    </script>
+</body>
+</html>
